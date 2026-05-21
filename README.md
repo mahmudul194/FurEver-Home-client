@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐾 FurEver Home — Client
 
-## Getting Started
+The Next.js frontend for the FurEver Home pet adoption platform. Browse pets, submit adoption requests, and manage your listings through a beautiful, responsive dashboard.
 
-First, run the development server:
+## 🌐 Live URL
 
+> https://assignment-9-client-nu.vercel.app
+
+## ✨ Features
+
+- 🔐 **JWT Authentication** — Secure login/registration with tokens stored in HttpOnly cookies; session persists on page reload.
+- 🐕 **Browse & Search Pets** — Filter by species, search by name, and sort by adoption fee or date.
+- 📋 **Adoption Request Workflow** — Submit requests with a pickup date & message; track their status from your dashboard.
+- 🏠 **Owner Dashboard** — List your pets, view incoming adoption requests, and edit or delete your listings.
+- 💜 **Wishlist** — Save favourite pets across sessions with localStorage persistence.
+- 🌗 **Dark / Light Theme Toggle** — System-preference-aware with localStorage persistence.
+- 📱 **Fully Responsive** — Mobile, tablet, and desktop layouts with a hamburger nav menu.
+- 🔔 **Toast Notifications** — All user feedback delivered via custom slide-in toast UI.
+- 🔑 **Google OAuth** — One-click sign in with your Google account.
+
+## 🛠️ NPM Packages Used
+
+| Package | Purpose |
+|---|---|
+| `next` | React framework with App Router |
+| `react` / `react-dom` | UI library |
+| `lucide-react` | Icon library |
+| `@react-oauth/google` | Google OAuth login component |
+
+## 🚀 Getting Started Locally
+
+### Prerequisites
+- Node.js ≥ 18
+- The backend server running at `http://localhost:5000`
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/mahmudul194/Assignment-9-client.git
+cd Assignment-9-client
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Create a `.env.local` file
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=<your-google-client-id>
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run the development server
+```bash
+npm run dev
+```
 
-## Learn More
+Visit **http://localhost:3000**
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+client/
+└── src/
+    ├── app/
+    │   ├── page.js              # Homepage with hero & pet listings
+    │   ├── pets/                # All pets & pet detail pages
+    │   ├── login/               # Login page
+    │   ├── register/            # Register page
+    │   └── dashboard/           # Protected dashboard pages
+    │       ├── my-listings/     # Manage your pet listings
+    │       ├── add-pet/         # Add a new pet listing
+    │       ├── my-requests/     # View your adoption requests
+    │       └── wishlist/        # Saved favourite pets
+    ├── components/
+    │   ├── Navbar.js            # Sticky responsive navigation
+    │   ├── Footer.js            # Site footer
+    │   └── Loader.js            # Full-page loading spinner
+    └── context/
+        ├── AuthContext.js       # Auth state, login, logout, wishlist
+        ├── ThemeContext.js      # Dark/light theme management
+        └── ToastContext.js      # Global toast notification system
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔒 Security Notes
+- JWT is stored in HttpOnly cookies on the server — never accessible to client-side JS.
+- All dashboard routes check for an authenticated user and redirect to `/login` if not found.
+- Google Client ID is exposed via `NEXT_PUBLIC_` prefix intentionally — it is safe to be public.
