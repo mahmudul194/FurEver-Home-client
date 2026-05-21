@@ -13,19 +13,27 @@ export const AuthProvider = ({ children }) => {
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
-  // Load wishlist from localStorage on mount
+  // Load user-specific wishlist from localStorage when user state changes
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('pet_wishlist');
-      if (stored) {
-        try {
-          setWishlist(JSON.parse(stored));
-        } catch (e) {
-          console.error('Failed to parse wishlist', e);
+      if (user) {
+        const wishlistKey = `pet_wishlist_${user.email}`;
+        const stored = localStorage.getItem(wishlistKey);
+        if (stored) {
+          try {
+            setWishlist(JSON.parse(stored));
+          } catch (e) {
+            console.error('Failed to parse wishlist', e);
+            setWishlist([]);
+          }
+        } else {
+          setWishlist([]);
         }
+      } else {
+        setWishlist([]);
       }
     }
-  }, []);
+  }, [user]);
 
   // Fetch current user session on mount
   useEffect(() => {
@@ -175,7 +183,7 @@ export const AuthProvider = ({ children }) => {
       showToast('Added to wishlist!', 'success');
     }
     setWishlist(updated);
-    localStorage.setItem('pet_wishlist', JSON.stringify(updated));
+    localStorage.setItem(`pet_wishlist_${user.email}`, JSON.stringify(updated));
   };
 
   return (
