@@ -22,8 +22,8 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-title">Contact Us</h4>
             <ul className="footer-links">
-              <li className="footer-text">📍 123 Shelter Lane, Cityville</li>
-              <li className="footer-text">📞 +1 (555) 123-4567</li>
+              <li className="footer-text">📍 House 12, Road 5, Dhanmondi, Dhaka</li>
+              <li className="footer-text">📞 +880 1711-234567</li>
               <li className="footer-text">✉️ support@fureverhome.org</li>
             </ul>
           </div>

@@ -73,7 +73,7 @@ export default function WishlistPage() {
               <div className="pet-card-content">
                 <div className="pet-card-title-row">
                   <h3 className="pet-card-title">{pet.name}</h3>
-                  <span className="pet-card-fee">${pet.adoptionFee}</span>
+                  <span className="pet-card-fee">৳{pet.adoptionFee}</span>
                 </div>
                 <div className="pet-card-meta">
                   <span className="pet-meta-tag">{pet.breed}</span>

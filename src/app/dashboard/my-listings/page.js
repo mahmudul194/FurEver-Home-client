@@ -224,7 +224,7 @@ export default function MyListingsPage() {
               <div className="pet-card-content">
                 <div className="pet-card-title-row">
                   <h3 className="pet-card-title">{pet.name}</h3>
-                  <span className="pet-card-fee">${pet.adoptionFee}</span>
+                  <span className="pet-card-fee">৳{pet.adoptionFee}</span>
                 </div>
                 <div className="pet-card-meta">
                   <span className="pet-meta-tag">{pet.breed}</span>
@@ -476,7 +476,7 @@ export default function MyListingsPage() {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label" htmlFor="edit-fee">Adoption Fee ($) *</label>
+                    <label className="form-label" htmlFor="edit-fee">Adoption Fee (৳) *</label>
                     <input
                       id="edit-fee"
                       type="number"

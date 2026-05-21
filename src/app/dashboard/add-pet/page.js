@@ -214,14 +214,14 @@ export default function AddPetPage() {
               className="form-input"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              placeholder="e.g. Los Angeles, CA"
+              placeholder="e.g. Dhaka, Chattogram, Sylhet"
               required
             />
           </div>
 
           {/* Adoption Fee */}
           <div className="form-group">
-            <label className="form-label" htmlFor="add-fee">Adoption Fee ($) *</label>
+            <label className="form-label" htmlFor="add-fee">Adoption Fee (৳) *</label>
             <input
               id="add-fee"
               type="number"

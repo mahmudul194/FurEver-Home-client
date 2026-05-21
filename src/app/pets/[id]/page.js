@@ -4,7 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useAuth } from '../../../context/AuthContext';
 import { useToast } from '../../../context/ToastContext';
 import Loader from '../../../components/Loader';
-import { Heart, Calendar, DollarSign, MapPin, Sparkles, Stethoscope, ShieldAlert } from 'lucide-react';
+import { Heart, Calendar, MapPin, Sparkles, Stethoscope, ShieldAlert } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function PetDetailsPage() {
@@ -216,10 +216,10 @@ export default function PetDetailsPage() {
               </div>
               <div className="spec-list-item">
                 <span className="spec-list-label">
-                  <DollarSign size={16} style={{ verticalAlign: 'middle', marginRight: '8px', color: 'var(--success)' }} />
+                  <span style={{ verticalAlign: 'middle', marginRight: '8px', color: 'var(--success)', fontWeight: '700' }}>৳</span>
                   Adoption Fee
                 </span>
-                <span className="spec-list-value" style={{ fontWeight: '700', color: 'var(--primary)' }}>${pet.adoptionFee}</span>
+                <span className="spec-list-value" style={{ fontWeight: '700', color: 'var(--primary)' }}>৳{pet.adoptionFee}</span>
               </div>
               <div className="spec-list-item" style={{ borderBottom: 'none' }}>
                 <span className="spec-list-label">✉️ Owner Contact</span>
