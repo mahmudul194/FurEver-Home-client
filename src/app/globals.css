@@ -153,6 +153,19 @@ button, input, select, textarea {
   gap: 16px;
 }
 
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+  .nav-links:not(.mobile-open) {
+    display: none;
+  }
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
