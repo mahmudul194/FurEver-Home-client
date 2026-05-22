@@ -6,7 +6,7 @@ import { ToastProvider } from "../context/ToastContext";
 import { AuthProvider } from "../context/AuthContext";
 
 export const metadata = {
-  title: "FurEver Home | MERN Pet Adoption Platform",
+  title: "FurEver Home",
   description: "Find your perfect pet companion today! Browse dogs, cats, birds, and other animals available for adoption near you.",
 };
 
