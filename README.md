@@ -4,7 +4,7 @@ The Next.js frontend for the FurEver Home pet adoption platform. Browse pets, su
 
 ## 🌐 Live URL
 
-> https://assignment-9-client-nu.vercel.app
+> https://furever-home-client.vercel.app
 
 ## ✨ Features
 
