@@ -35,8 +35,8 @@ The Next.js frontend for the FurEver Home pet adoption platform. Browse pets, su
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/mahmudul194/Assignment-9-client.git
-cd Assignment-9-client
+git clone https://github.com/mahmudul194/furever-home-client.git
+cd furever-home-client
 ```
 
 ### 2. Install dependencies
